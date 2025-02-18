@@ -1,0 +1,27 @@
+#HO {
+    color:#e84b46;
+}
+#Bal {
+    color:#0ceb70;
+}
+#St {
+    color:#1eebfa
+}
+a:hover {
+    color:#dc6ae2;
+    background-color: #282e36;
+}
+a {
+    color:#ec00f8;
+}
+p {
+    font-size: 18pt;
+    color:#fcfcfc;
+}
+body {background-color:#3e4854;}
+
+span {
+    font-size:20pt;
+}
+
+h1 {color:ghostwhite}

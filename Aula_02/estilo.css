@@ -1,0 +1,20 @@
+p{
+    color:blue;
+    font-size: 18pt;
+}
+
+
+#p1{
+    color:red;
+    font-size: 15pt;
+}
+
+.tag_amarela{color: rgb(255, 204, 39);}
+
+div p{
+    color:indigo
+}
+
+.tag_amarela:hover{
+    background-color: gray;
+}
