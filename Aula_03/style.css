@@ -11,3 +11,18 @@ body {background-color:#fffcf2;}
 .size{width: 100px;}
 .display_inline{display: inline;}
 .display_block{display: block;}
+#div_1{display: inline;
+    background-color: chocolate;
+border: 2px solid #261d3b;
+position: relative;
+top: 100px; left: 100px;}
+#div_2{display: inline;
+    background-color: chocolate;
+    border: 2px solid #261d3b;
+    position: absolute;
+    top: 100px; left: 100px;
+    z-index:-1;}
+#contato{background-color: greenyellow;
+position: fixed;
+bottom: 0; right: 2px;}
+#contato.hover {background-color: aqua}

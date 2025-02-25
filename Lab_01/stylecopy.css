@@ -1,0 +1,55 @@
+body{background-color:lightgray}
+p{
+    color:indigo;
+    font-family:serif; size:20pt;
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+table {
+    border: 3px dashed red;
+    text-align: center;
+}
+th, td {
+    border: 1px groove red;
+}
+.tabelattl {
+    color:red;}
+iframe {
+    width: 250px; height: 250px;
+align-items: center;
+border:none;
+}
+.frame {
+    position:relative;
+    margin: 25px;
+    border: none;
+    text-align: center;
+}
+.cabeca { position: fixed;
+}
+.cabeca img {
+    height: 140px;
+    z-index: 4;
+}
+.cabeca p {
+    width: 99%;
+    height: 150px;
+    position: fixed;
+    top:3px;
+    left: 3px;
+    background-color: bisque;
+    border: 5px solid blue;
+    font-size: 30px; color:darkgreen;
+    text-align: center;
+    display: inline;
+    z-index: 3;
+}
+#img1 {
+    top:4px; left: 3px;}
+#img2 {
+    top:4px; right:3px;}
+
+
+.livros {text-align: center;}

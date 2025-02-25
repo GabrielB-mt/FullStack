@@ -1,11 +1,18 @@
 #HO {
     color:#e84b46;
+    border: 3px solid #e84b46;
+    padding: 5px;
 }
 #Bal {
     color:#0ceb70;
+    border: 3px solid #0ceb70;
+    padding: 5px;
 }
+
 #St {
-    color:#1eebfa
+    color:#1eebfa;
+    border: 3px solid #1eebfa;
+    padding: 5px;
 }
 a:hover {
     color:#dc6ae2;
@@ -24,4 +31,33 @@ span {
     font-size:20pt;
 }
 
-h1 {color:ghostwhite}
+h1 {color:ghostwhite;
+}
+.links{
+    display:inline;
+    border: 3px outset ghostwhite;
+    background-color: #e6efff;
+    font-size: 14pt;
+    padding: 3px; margin:3px;
+    position: fixed;
+    top:2px;
+}
+.links:hover{
+    border: 3px outset #e3e3e9;
+    background-color: #bac1ce;
+}
+.links a:hover{color: #dc6ae2;background-color: transparent;}
+#OU{
+    position:fixed;
+    left:2px;
+}
+#VGC{
+    position: fixed;
+    left: 50px;
+}
+#Random{
+    position:fixed;
+    left:110px;
+}
+.text{position: relative;
+top:30px}
