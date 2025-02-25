@@ -1,0 +1,6 @@
+body {background-color:#fffcf2;}
+.dotted {border-style: dotted;}
+.dashed {border-style: dashed;}
+.solid {border-style: solid;}
+.outset {border-style: outset;}
+.margin{margin: 10px}
