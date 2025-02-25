@@ -1,6 +1,13 @@
 body {background-color:#fffcf2;}
-.dotted {border-style: dotted;}
-.dashed {border-style: dashed;}
-.solid {border-style: solid;}
-.outset {border-style: outset;}
-.margin{margin: 10px}
+.dotted {border: 5px dotted red;}
+.dashed {border: 5px dashed #dc6ae2;}
+.solid {border: 5px solid green;}
+.outset {border: 5px outset cyan;}
+.radius_10{border-radius: 10px;}
+.radius_20{border-radius: 20px;}
+.shadow{box-shadow: 5px 5px gray;}
+.margin{margin: 10px;}
+.padding{padding: 10px;}
+.size{width: 100px;}
+.display_inline{display: inline;}
+.display_block{display: block;}
