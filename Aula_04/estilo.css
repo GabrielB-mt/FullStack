@@ -1,0 +1,22 @@
+body {background-color:bisque;}
+h1 {
+    color:#dc6ae2
+}
+.flex-container {
+    background-color:blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 300px;
+    /* align-content: space-between; */
+}
+.flex-container div {
+    background-color: whitesmoke;
+    padding: 10px;
+    margin: 10px;
+    flex-grow: 1;
+}
+#d5 {order: 1; flex-grow: 2; align-self: center;}
+#d14 {order: 2; flex-grow: 3; align-self: flex-end;}
+#d24 {order: 3; flex-shrink: 2; align-self: flex-start;}

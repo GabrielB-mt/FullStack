@@ -1,0 +1,69 @@
+.flex1{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+#box1 {background-color:rebeccapurple;
+margin: 5px;
+color:white;
+height: 200px;
+width: 200px;
+align-content: center;}
+#box1 p {margin-top:5px; margin-bottom: 5px; margin-left:10px; color:white}
+#txt1 {font-size: 20pt; justify-content: center;}
+#txt2 {font-size: 30pt;}
+
+
+.flex1 img {margin-left: 10px; margin-right: 10px; margin-top: 5px;}
+#img1 {height: 200px;}
+#img2 {height: 200px;}
+
+.flex2{
+    display: flex;
+    justify-content: center;
+
+    padding-bottom: 10px;}
+.flex2 a{
+    margin-left:5px; margin-right: 5px;
+}
+
+.flex3 {display: flex;
+justify-content: center;}
+.flex3 p {display: inline; margin-top: 0px; margin-bottom: 0px;}
+.flex3 a{
+    margin-left:5px; margin-right: 5px;
+}
+
+.flex4 {display:flex;
+justify-content: center;
+margin-top: 10pt;}
+
+.flex5 {display: flex;
+align-content: center;
+flex-direction: column;
+flex-wrap:wrap;
+height: 400px;}
+#img3 {height: 300px;
+width: 300px;}
+#img4 {height: 200px;
+margin-bottom: 15px;}
+#img5 {height: 100px;
+margin-top:15px;}
+
+.flex6{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;}
+.flex6 a{
+    margin-left:5px; margin-right: 5px;
+}
+
+.flex7{ 
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;}
+
+a {color:darkslateblue}
+p {color:darkslateblue}
