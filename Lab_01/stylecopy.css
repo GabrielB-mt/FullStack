@@ -1,68 +1,54 @@
-body{background-color:lightgray;
-position:relative;
-top:150px;}
-p{
+body{background-color: lightgray;}
+.cabeca{
+    display: flex;
+    height: 135pt;
+    background-color: bisque;
+    justify-content: space-between;
+    align-items: center;
+    border: 5px solid blue;
+}
+.cabeca img{height: 130pt;}
+.cabeca p{
+    color: darkgreen;
+    font-size: 40pt;
+    font-weight: bold;
+}
+.links {
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: space-evenly;
+}
+a{color: darkred;}
+p {
     color:indigo;
     font-family:serif; 
-    size:20px;
+    size:20pt;
     text-align: center;
 }
 h1{
     text-align: center;
 }
+.livros{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right:60pt;
+    padding-left: 60pt;
+}
+.livros img{
+    height: 300px;
+}
+
 iframe {
-    width: 250px; height: 250px;
-align-items: center;
-border:none;
-margin-left: 40px; margin-right: 40px; margin-bottom:40px;
-z-index: -1;
+    width: 250pt; height: 250pt;
+    margin-left: 20pt;
+    margin-right: 20pt;
+    border: none;
 }
 .frame {
-    position:relative;
-    margin: 25px;
-    border: none;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
-
-.livros {text-align: center;}
-.livros img {margin-left: 40px; margin-right: 40px; margin-bottom: 40px;}
-
-
-.cabeca { position: fixed;
-    top:5px;
-    background-color: bisque;
-    width: 98%;
-    height: 135px;
-    border: 5px solid blue;
-    text-align: center;
-    z-index: 4;}
-.cabeca img {height: 130px;}
-.cabeca #img1 {
-    position: fixed;
-    left: 1%;
-    top: 10px;
-}
-.cabeca #img2 { 
-    position: fixed;
-    right: 1%;
-    top: 10px;
-}
-.cabeca p {
-    color:darkgreen;
-    font-size: 40px;
-    display: inline;
-    font-weight: bold;
-    position: relative;
-    top: 40px;
-}
-
-.links {position: fixed;
-    top: 150px;
-    background-color: lightskyblue;
-    width: 98.65%;
-    text-align: center;
-    z-index: 4;}
-.links a {margin-left: 60px; margin-right: 60px;}
 
 table {
     border: dashed 5px red;
@@ -74,35 +60,37 @@ th , td {
 }
 .tabela tr:first-child{color:red;}
 
-.consulta {margin: auto;
-background-color: yellow;
-width: 25%;
-font-size: 15px;
-font-weight: normal;}
-.consulta a {margin-left: 20px; margin-right: 20px; color:darkred}
-h4 {font-weight: normal;
-margin-top: 40px;}
+.consulta {
+    display: flex;
+    background-color: yellow;
+    width: 450pt;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    margin: auto;
+    font-size: 15pt;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.consulta h4 {margin: 0;
+    font-weight: normal;
+}
+.consulta a {
+    color:darkred;
+    margin-left: 75pt; margin-right: auto;
+}
 
-.rodape img {height: 130px;}
-.rodape { position: relative;
-    bottom: 5px;
+.rodape{
+    display: flex;
+    height: 100pt;
     background-color: bisque;
-    width: 100%;
-    height: 135px;}
-.rodape #img4 { 
-    position: absolute;
-    right: 1%;
-    bottom: 1px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5pt;
 }
+.rodape img {height: 95pt;}
 
-.rodape #img3 {position: absolute;
-    left:1%;
-    bottom: 1px;
-}
 .rodape p {
-    size: 15px;
+    size: 15pt;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     color: black;
-    position:relative;
-    top: 45%
 }
