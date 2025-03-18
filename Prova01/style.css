@@ -1,0 +1,124 @@
+.cabeca {
+    display: flex;
+    background-color: #0F70B4;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 30pt;
+    padding-left: 260pt;
+    height: 30pt;
+}
+.cabeca p {
+    color:white;
+    font-size:10pt;
+    margin: none;
+}
+
+.sbc {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100pt;
+    width: 400pt;
+    justify-content: flex-start;
+}
+.sbc img {
+    height: 100pt;
+}
+.texto p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 28pt;
+    margin: 0px;
+    padding: 0px;
+    height: 20pt;
+}
+.texto {
+    width: 220pt;
+    height: 100pt;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+#t1 {color: aqua;}
+#t2 {color:gray;}
+#t3 {color:orange}
+#t4 {color:green}
+#t5 {font-size: 8pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-top: 10pt;
+}
+.meiopag {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 440pt;
+    justify-content: space-evenly;
+}
+.locaisttl {
+    background-color: orange;
+    color: white;
+    width: 253pt;
+    height: auto;
+}
+.locaisttl p {padding: 0px;
+margin: 0px;}
+.locais{
+    border: groove orange 2pt;
+    width: 250pt;
+    margin-top:10pt;
+    height: 400pt;
+}
+#t6 {
+    font-weight: bold;
+}
+.locais img{
+    margin:0px;
+    padding: 0px;
+    width: 250pt;
+}
+.laranja {
+color:orange;
+}
+
+.secretariasttl {
+    background-color: green;
+    color: white;
+    width: 253pt;
+    height: auto;
+}
+.secretarias {
+    width: 250pt;
+    height: 347pt;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.demaisttl {
+    background-color: green;
+    color: white;
+    width: 253pt;
+    height: auto;
+}
+.demaisttl p {padding: 0px;
+    margin: 0px;}
+.secretariasttl p {padding: 0px;
+        margin: 0px;}
+
+.prefeiturattl {
+            background-color: #0F70B4;
+            color: white;
+            width: 253pt;
+            height: auto;
+        }
+.prefeiturattl p {padding: 0px;
+            margin: 0px;}
+.prefeitura{
+    width: 250pt;
+}
+.rodape {
+    background-color: #0F70B4;
+    color:white;
+    text-align: center;
+}
