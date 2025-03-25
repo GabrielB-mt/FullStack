@@ -1,0 +1,38 @@
+body{
+    background-color: #404352;
+}
+
+.cima{
+    width: 500pt;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.cima input{
+    width: 250pt;
+    height: 30pt;
+    margin: 2pt;
+    text-align: center;
+    color : #dc6ae2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: #2e303b;
+    font-size: 15pt;
+}
+
+#verificacao {
+    text-align: center;
+    color: #faedca;
+    width: 160pt;
+    margin: auto;
+    font-size:20pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+#ver{
+    display: flex;
+    margin: auto;
+    background-color: none;
+}
