@@ -1,0 +1,16 @@
+body{
+    background-color: #404352;
+}
+.canvas{
+    background-color: white;
+    margin:auto
+}
+.flexcanvas{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    align-content: space-evenly;
+    width: 300px;
+    height: 700px;
+}
