@@ -10,13 +10,18 @@ function desenhar_quadrado(pos1, pos2, dim1, dim2, colorfill, colorstroke, linha
     console.log("Quadrado")
 }
 
-function desenhar_linha(start1, start2, end1, end2, color, tamanho, ctx){
+function desenhar_linha(start1, start2, end1, end2, color, tamanho, ctx, meio1, meio2, fill){
     ctx.beginPath();
     ctx.lineWidth = tamanho
     ctx.strokeStyle = color;
+    ctx.fillStyle = color;
     ctx.moveTo(start1,start2);
-    ctx.lineTo(end1,end2)
+    ctx.lineTo(meio1,meio2);
+    ctx.lineTo(end1,end2);
     ctx.stroke();
+    if (fill = 1){
+        ctx.fill()
+    }
     ctx.closePath();
     console.log("Linha")
 }
@@ -83,9 +88,17 @@ let ctx2 = cvs2.getContext('2d')
 
 desenhar_quadrado(10,10,280,280, 'aquamarine', 'transparent', 1, ctx2)
 desenhar_quadrado(10,200,280,90, 'grey', 'transparent', 1, ctx2)
-desenhar_quadrado(115,125,75,75, 'saddlebrown', 'transparent', 1, ctx2)
+desenhar_linha(112.5, 125, 187.5, 125, 'indianred', 1, ctx2, 150, 95, 1)
+desenhar_quadrado(112.5,125,75,75, 'saddlebrown', 'transparent', 1, ctx2)
 desenhar_quadrado(10,250,100,40, 'dodgerblue', 'transparent', 1, ctx2)
 desenhar_arco(110,290,40,1,2,'dodgerblue', 'transparent', 1, ctx2)
 desenhar_quadrado(10,200,40,90, 'dodgerblue', 'transparent', 1, ctx2)
 desenhar_arco(10,200,40,1.5,2.5,'dodgerblue', 'transparent', 1, ctx2)
 desenhar_quadrado(50,170,15,30, 'sienna', 'transparent', 1, ctx2)
+desenhar_arco(57.5,155,20,0,2,'green','transparent',1,ctx2)
+desenhar_quadrado(250,210,15,30, 'sienna', 'transparent', 1, ctx2)
+desenhar_arco(257.5,195,20,0,2,'green','transparent',1,ctx2)
+desenhar_quadrado(142.5,165,15,35, 'brown', 'transparent', 1, ctx2)
+desenhar_quadrado(119.5,142.5,22.5,22.5, 'deepskyblue', 'transparent', 1, ctx2)
+desenhar_quadrado(157,142.5,22.5,22.5, 'deepskyblue', 'transparent', 1, ctx2)
+desenhar_arco(225,75,40,0,2,'yellow','transparent',1,ctx2)
