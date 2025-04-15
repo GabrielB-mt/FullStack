@@ -1,0 +1,15 @@
+body{
+    background-color: #404352;
+}
+#cvs1 {
+    background-color: #323d8c;
+    border: #202021;
+    border-style: solid;
+    border-width: 3;
+}
+.aquario{
+    display: flex;
+    margin:auto;
+    justify-content: center;
+
+}
