@@ -14,18 +14,6 @@ let jellyfish = {
         ctx.closePath();
     }
 }
-function desenhar_arco(pos1, pos2, raio, inicio, fim, colorfill, colorstroke, linha, ctx){
-    ctx.beginPath();
-    ctx.lineWidth = linha;
-    ctx.strokeStyle = colorstroke;
-    ctx.fillStyle = colorfill;
-    ctx.arc(pos1,pos2,raio,inicio*Math.PI,fim*Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.closePath();
-    console.log("Arco")}
-
-
 
 function animacao(){
     ctx.clearRect(0,0,400,400)
@@ -33,6 +21,7 @@ function animacao(){
     requestAnimationFrame(animacao)
 }
 animacao();
+
 document.addEventListener('mousemove',function(evento){
     let rect = canvas.getBoundingClientRect();
     let x_mouse = evento.clientX - rect.left;
