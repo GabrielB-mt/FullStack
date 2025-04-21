@@ -8,7 +8,7 @@ let jellyfish = {
     raio: 25,
     img: new Image(),
     desenha: function(){
-        this.img.src = "imagens/tomarijellyfish.png";
+        this.img.src = "../../imagens/tomarijellyfish.png";
         ctx.beginPath();
         ctx.drawImage(this.img, this.x, this.y, 2*this.raio, 2*this.raio);
         ctx.closePath();

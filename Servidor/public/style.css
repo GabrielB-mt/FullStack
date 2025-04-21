@@ -1,1 +1,58 @@
-body {background-color: bisque;}
+body {
+    background-color: #404352;
+}
+
+h1, h2 {
+    color:#dc6ae2;
+}
+p{
+    font-size: 15pt;
+    color:ghostwhite;
+}
+
+table, th, td {
+    border:2px solid ghostwhite;
+    border-radius: 5pt;
+}
+
+th, td {
+    color:ghostwhite;
+    font-size:13pt;
+}
+
+.dev{
+    color:#c2f2c9
+}
+
+#vid{
+    color:rgb(28, 121, 243)
+}
+
+.FullStack{
+    color:#88ddff
+}
+
+#FundAlgoritmos{
+    color:#ff719c
+}
+
+#PorFora{
+    color:rgb(255, 236, 131)
+}
+
+.mail:hover{
+    color:antiquewhite;   
+}
+
+a{
+    color:#ec00f8
+}
+a:hover{
+    color:#dc6ae2;
+    background-color: #2a2c36;
+}
+a:visited{color:#bd00c7}
+
+h3{color: #ff467d;
+font-size: 18pt;}
+
