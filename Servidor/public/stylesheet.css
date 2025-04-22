@@ -1,0 +1,33 @@
+body {
+    background-color: bisque;
+}
+h1 {
+    color: #dc6ae2;
+}
+
+#inicio{
+display: flex;
+flex-wrap: wrap;
+width: 300;
+margin: auto;
+align-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+#formulario{
+    margin-top: 20px;
+    align-items: center;
+    align-content: center;
+}
+h2{
+    text-align: center;
+    color: #dc6ae2;
+}
+
+.divs_for{
+    background-color: coral;
+    padding: 10px;
+    margin: 10px;
+    display: inline;
+}

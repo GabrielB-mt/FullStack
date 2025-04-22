@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastrado</title>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <% for(var i = 1; i <= contas.length; i++ ){
+            if(login == contas[i][1] && senha == contas[i][2]) {
+                %> <div class="sucesso">
+                    <h1>Logado com sucesso!</h1>
+                </div>
+           <% break}
+            else{
+                %> <div class="incorreto">
+                    <h1>Login ou senha incorretos!</h1>
+                </div> 
+        <%  }
+        } %>
+
+    </body>
+</html>
