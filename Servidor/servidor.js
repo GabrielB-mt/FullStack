@@ -65,7 +65,7 @@ app.get("/login", function(requisicao, resposta){
     resposta.redirect("Laboratórios/Lab08/login.html")
 })
 
-var contas = []
+var contas = [['plk3','123']]
 
 app.post("/cadastrolab", function(requisicao,resposta){
     var conta = []
@@ -79,6 +79,7 @@ app.post("/cadastrolab", function(requisicao,resposta){
     contas.push(conta)
 
     console.log(contas)
+    
 
 })
 
