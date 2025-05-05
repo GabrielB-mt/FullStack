@@ -6,15 +6,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Cria Post</h1>
+<h1>Criar Post</h1>
+<div class="form">
 <form method="post", action="/criacao">
-    <p>Título</p><br>
-    <input type="text" name="titulo">
-    <p>Resumo</p><br>
-    <input type="text" name="resumo">
-    <p>Conteúdo</p><br>
-    <input type="text" name="conteudo"><br>
+    <p>Título:</p>
+    <input type="text" name="titulo" class="textinput">
+    <p>Resumo:</p>
+    <input type="text" name="resumo" class="textinput">
+    <p>Conteúdo:</p>
+    <input type="text" name="conteudo" class="textinput">
+    <div id="botao">
     <input type="submit", value="Enviar">
+    </div>
+</div>
 </form>
 </body>
 </html>

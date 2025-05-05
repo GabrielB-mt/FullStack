@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Blog</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Laboratórios/Lab09/style.css">
 </head>
 <body>
-<form method="get", action="/postcriar">
-    <input type="button", value="Criar Post">
+    <% for (var i = 0; i < data.length;  i++ ) { %>
+        <div class="posts">
+           <h2><%= data[i]['db_titulo']  %></h1> 
+            <p><%= data[i]['db_resumo']  %></p>
+            <p><%= data[i]['db_conteudo']  %></p>
+        </div>
+     <% } %>
+     <div id="botao">
+     <form method="get" action="/postcriar">
+    <input type="submit" value="Criar Post">
 </form>
+</div>
 
 
 

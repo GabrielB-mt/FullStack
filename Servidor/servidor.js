@@ -5,7 +5,7 @@ let bodyParser = require("body-parser")
 var mongodb = require("mongodb")
 
 const MongoClient = mongodb.MongoClient;
-const uri = `mongodb+srv://GabrielB:gabM4242@fullstackbd.qgom4c8.mongodb.net/?retryWrites=true&w=majority&appName=FullStackBD`
+const uri = `mongodb+srv://GabrielB:F9WpFg6YMTZUWbzE@fullstackbd.qgom4c8.mongodb.net/?retryWrites=true&w=majority&appName=FullStackBD`
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 
@@ -136,7 +136,11 @@ app.post("/loginlab", function(requisicao,resposta){
 //------------------------------------------------------------------
 
 app.get("/blog", function(requisicao,resposta){
-    resposta.render("blog")
+    blog.find().toArray(function(err, items){
+        if(err){resposta.render("blog", {status: "erro"})
+        }else {resposta.render("blog",{data:items})}
+    })
+    
 })
 
 
@@ -154,9 +158,9 @@ app.post("/criacao", function(requisicao,resposta){
     var data = {db_titulo: titulo, db_resumo: resumo, db_conteudo: conteudo}
     blog.insertOne(data, function(err){
         if(err){
-            resposta.render("blogresposta", :)
+            resposta.render("blogresposta", {status:"Erro"})
         }else{
-            resposta.render("resposta2")
+            resposta.render("blogresposta")
         }
     })
 })

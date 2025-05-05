@@ -1,0 +1,58 @@
+body {
+    background-color: bisque;
+    display: flex;
+    flex-direction: column
+    
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 5pt;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    width: 500px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.form{
+    display: flex;
+    margin:auto;
+    flex-direction: column;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+}
+.form input{
+    margin-bottom: 5px;
+    
+}
+#botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textinput {
+    width: 240px;
+}
+
+h2{
+    padding: 0;
+    margin:5px;
+}
+p{
+    padding: 0;
+    margin: 5px;
+}
+
+h1{
+    text-align: center;
+}
+a{
+    text-align: center;
+}
