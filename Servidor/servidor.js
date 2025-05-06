@@ -11,8 +11,9 @@ const client = new MongoClient(uri, { useNewUrlParser: true });
 
 var dbo = client.db("FullStackBD");
 var usuarios = dbo.collection("usuarios");
-var blog = dbo.collection("posts")
-
+var blog = dbo.collection("posts");
+var carros_usuarios = dbo.collection("carros_usuarios")
+var carros_cadastrados = dbo.collection("carros_cadastrados")
 
 
 var app = express();
@@ -85,6 +86,47 @@ app.post("/logar_usuario", function(requisicao, resposta) {
 
 })
 
+app.post("/atualizar_senha", function(requisicao, resposta){
+    let login = requisicao.body.login
+    let senha = requisicao.body.senha
+    let novasenha = requisicao.body.novasenha
+
+    let data = {db_login: login, db_senha: senha}
+    let newdata = { $set: {db_senha: novasenha}}
+
+    usuarios.updateOne(data, newdata, function(err, result){
+        console.log(result);
+        if (result.modifiedCount == 0) {
+            resposta.render('loginresposta', {status: "Usuário/senha não encontrado!"})
+          }else if (err) {
+            resposta.render('loginresposta', {status: "Erro ao atualizar usuário!"})
+          }else {
+            resposta.render('loginresposta', {status: "Usuário atualizado com sucesso!"})        
+          };
+    
+    })
+
+})
+
+
+app.post("/remover_usuario", function(requisicao, resposta){
+    let login = requisicao.body.login
+    let senha = requisicao.body.senha
+
+    let data = {db_login: login, db_senha: senha}
+
+    usuarios.deleteOne(data, function(err, result){
+        console.log(result);
+        if (result.deletedCount == 0) {
+            resposta.render('loginresposta', {status: "Usuário/senha não encontrado!"})
+          }else if (err) {
+            resposta.render('loginresposta', {status: "Erro ao remover usuário!"})
+          }else {
+            resposta.render('loginresposta', {status: "Usuário removido com sucesso!"})        
+          };
+    
+    })
+})
 
 // app.get("/cadastrar", function(requisicao, resposta){
 //     let nome = requisicao.query.nome;
@@ -103,6 +145,7 @@ app.post("/logar_usuario", function(requisicao, resposta) {
 
 
 // ------------------------------------------------------------------------------------
+// Lab08
 
 app.get("/cadastra", function(requisicao, resposta){
     resposta.redirect("Laboratórios/Lab08/cadastro.html")
@@ -134,6 +177,7 @@ app.post("/loginlab", function(requisicao,resposta){
 })
 
 //------------------------------------------------------------------
+// Lab 09
 
 app.get("/blog", function(requisicao,resposta){
     blog.find().toArray(function(err, items){
@@ -164,3 +208,48 @@ app.post("/criacao", function(requisicao,resposta){
         }
     })
 })
+
+
+//------------------------------------------------------------------
+// Lab10
+
+
+app.get("/carro_cadastra", function(requisicao,resposta){
+    resposta.redirect("/Laboratórios/Lab10/cadastra.html")
+})
+
+app.post("/carro_cadastrar_usuario", function(requisicao,resposta){
+    let nome = requisicao.body.nome
+    let login = requisicao.body.login
+    let senha = requisicao.body.senha
+
+    let data = {db_nome: nome, db_login: login, db_senha: senha}
+    
+    carros_usuarios.insertOne(data, function(err){
+        if(err){
+            resposta.render("carros_conta_resposta", {status: "Erro ao cadastrar"})
+        }else{resposta.render("carros_conta_resposta", {status: "Cadastro feito com sucesso!"})}
+    })
+})
+
+app.get("/carro_loga", function(requisicao,resposta){
+    resposta.redirect("/Laboratórios/Lab10/loga.html")
+})
+
+app.post("/carros_logar_usuario", function(requisicao,resposta){
+    let login = requisicao.body.login
+    let senha = requisicao.body.senha
+
+    let data = {db_login: login, db_senha: senha}
+
+    carros_usuarios.find(data).toArray(function(err, items){
+        if(items.length == 0){
+            resposta.render("carros_conta_resposta", {status: "Usuário/Senha não encontrado(s)", logado: false})
+        }else if(err){
+            resposta.render("carros_conta_resposta", {status: "Erro ao logar", logado: false})
+        }else{
+            resposta.render("carros_conta_resposta", {status: "Usuário logado! Bem vindo(a) "+ items[0]['db_nome'], logado: true})
+        }
+    })
+})
+

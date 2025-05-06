@@ -37,6 +37,11 @@ body {
     justify-content: center;
 }
 
+#conjuntoposts{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .textinput {
     width: 240px;
 }

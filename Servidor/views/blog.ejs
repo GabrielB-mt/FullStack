@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/Laboratórios/Lab09/style.css">
 </head>
 <body>
+    <div id="conjuntoposts">
     <% for (var i = 0; i < data.length;  i++ ) { %>
         <div class="posts">
            <h2><%= data[i]['db_titulo']  %></h1> 
@@ -13,6 +14,7 @@
             <p><%= data[i]['db_conteudo']  %></p>
         </div>
      <% } %>
+    </div>
      <div id="botao">
      <form method="get" action="/postcriar">
     <input type="submit" value="Criar Post">

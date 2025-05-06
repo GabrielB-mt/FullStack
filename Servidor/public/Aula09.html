@@ -14,7 +14,7 @@
             <div id="bloons">
         <img src="imagens/bloons.gif" height="200">
             </div>
-        <h2>Exemplo de GET</h2>
+        <!-- <h2>Exemplo de GET</h2>
         <form method="get" action="/inicio">
             <input type="text" name="Nome">
             <input type="submit" value="Clique Aqui para GET">
@@ -29,7 +29,7 @@
         <form>
             <input type="submit" value="POST /inicio" formmethod="post" formaction="/inicio">
             <input type="submit" value="GET /inicio" formmethod="get" formaction="/inicio">
-        </form>
+        </form> -->
 
 
         <h2>Cadastro de Usuário</h2>
@@ -48,13 +48,28 @@
         <input type="submit" value="Logar"> 
         </form>
 
+        <h2>Alterar senha do usuário</h2>
+        <form method="post" action="/atualizar_senha">
+        <p>Login: <input type="text" name="login"></p>
+        <p>Senha: <input type="password" name="senha"></p>
+        <p>Nova Senha: <input type="password" name="novasenha"></p>
+        <input type="submit" value="Atualizar">   
+        </form>
 
-        <h2>Exemplo de for no EJS</h2>
+        <h2>Remover usuário</h2>
+        <form method="post" action="/remover_usuario">
+        <p>Login: <input type="text" name="login"></p>
+        <p>Senha: <input type="password" name="senha"></p>
+         <input type="submit" value="Remover Usuário"> 
+        </form>
+
+
+        <!-- <h2>Exemplo de for no EJS</h2>
         <form method="get" action="/for_ejs">
         <p>Insira um valor: <input type="number" name="valor"></p>
         <input type="submit" value="Clique aqui para gerar divs"> 
 
-        </form>
+        </form> -->
 
 
 
