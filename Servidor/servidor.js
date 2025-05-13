@@ -4,8 +4,10 @@ var express = require('express')
 let bodyParser = require("body-parser")
 var mongodb = require("mongodb")
 
+
+
 const MongoClient = mongodb.MongoClient;
-const uri = `mongodb+srv://GabrielB:F9WpFg6YMTZUWbzE@fullstackbd.qgom4c8.mongodb.net/?retryWrites=true&w=majority&appName=FullStackBD`
+const uri = 'mongodb+srv://GabrielB:F9WpFg6YMTZUWbzE@fullstackbd.qgom4c8.mongodb.net/?retryWrites=true&w=majority&appName=FullStackBD'
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 
@@ -253,3 +255,39 @@ app.post("/carros_logar_usuario", function(requisicao,resposta){
     })
 })
 
+app.post("/cadastrar_carro", function(requisicao, resposta){
+    let marca = requisicao.body.marca
+    let modelo = requisicao.body.modelo
+    let ano = requisicao.body.ano
+    
+    let qtd_disponivel = requisicao.body.qtd
+
+
+    let data = {db_marca: marca, db_modelo: modelo, db_ano: ano, db_qtd_disponivel: qtd_disponivel}
+    
+    carros_cadastrados.insertOne(data, function(err){
+        if(err){
+            resposta.render("cadastro_carro_resposta", {status: "Erro ao cadastrar"})
+        }else{resposta.render("cadastro_carro_resposta", {status: "Carro cadastrado com sucesso!"})}
+    })
+})
+
+app.post("/vender_carro", function(requisicao, resposta){
+    let marca = requisicao.body.marca
+    let modelo = requisicao.body.modelo
+    let ano = requisicao.body.ano
+
+    let data = {db_marca: marca, db_modelo: modelo, db_ano: ano}
+    let newdata = { $set: {db_qtd_disponivel: += -1} }
+    
+    carros_cadastrados.updateOne(data, newdata, function(err, result){
+        console.log(result)
+        if (result.modifiedCount == 0){
+            resposta.render("cadastro_carro_resposta", {status: "Carro não encontrado"})
+        }else if (err){
+            resposta.render("cadastro_carro_resposta", {status: "Erro ao vender carro"})
+        }else{
+            resposta.render("cadastro_carro_resposta", {status: "Carro vendido!"})
+        }
+    })
+})

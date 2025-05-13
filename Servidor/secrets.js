@@ -1,0 +1,1 @@
+secret = 'GabrielB:F9WpFg6YMTZUWbzE@fullstackbd'
