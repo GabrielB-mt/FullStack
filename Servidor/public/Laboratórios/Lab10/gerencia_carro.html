@@ -15,6 +15,21 @@
             <p>Quantidade Disponível: <input type='number' name='qtd'></p>
             <input type="submit" value="Cadastrar">
         </form>
+        <h3>Atualizar Carro</h3>
+        <form method="post" action="/atualizar_carro">
+            <div id="atualizar_old">
+            <p>Marca: <input type='text' name='marca'></p>
+            <p>Modelo: <input type='text' name='modelo'></p>
+            <p>Ano: <input type='text' name='ano'></p>
+            </div>
+            <div id="atualizar_new">
+            <p>Nova Marca: <input type='text' name='newmarca'></p>
+            <p>Novo Modelo: <input type='text' name='newmodelo'></p>
+            <p>Novo Ano: <input type='text' name='newano'></p>
+            <p>Nova Quantidade Disponível: <input type='number' name='newqtd'></p>
+            </div>
+            <input type="submit" value="Atualizar">
+        </form>
         <h3>Deletar Carro</h3>
         <form method="post" action="/deletar_carro">
             <p>Marca: <input type='text' name='marca'></p>

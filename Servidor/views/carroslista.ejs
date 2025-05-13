@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Listagem de Carros</title>
+        <link rel="stylesheet" href="/Laboratórios/Lab10/style.css">
+    </head>
+    <body>
+        <% if (status == "Erro"){
+            %><h1><%= status%></h1> <%
+        }else{
+            for (var i = 0; i < data.length; i++){
+                qtd = -1
+                if (data[i]['db_qtd_disponivel'] == 0){
+                    qtd = "Esgotado"
+                }else{
+                    qtd = data[i]['db_qtd_disponivel']
+                } %>
+                <div class="carro">
+                <p><%= data[i]['db_marca'] %> - <%= data[i]['db_modelo'] %></p>
+                <p><%= data[i]['db_ano'] %></p>
+                <p>Quantidade Disponível: <%= qtd %></p>
+            <% }
+        } %>
+    </body>
+</html>

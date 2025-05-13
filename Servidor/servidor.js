@@ -2,7 +2,8 @@ require("colors")
 var http = require('http');
 var express = require('express')
 let bodyParser = require("body-parser")
-var mongodb = require("mongodb")
+var mongodb = require("mongodb");
+const { red } = require("colors");
 
 
 
@@ -260,14 +261,14 @@ app.post("/cadastrar_carro", function(requisicao, resposta){
     let modelo = requisicao.body.modelo
     let ano = requisicao.body.ano
     
-    let qtd_disponivel = requisicao.body.qtd
+    let qtd_disponivel = parseInt(requisicao.body.qtd)
 
 
     let data = {db_marca: marca, db_modelo: modelo, db_ano: ano, db_qtd_disponivel: qtd_disponivel}
     
     carros_cadastrados.insertOne(data, function(err){
         if(err){
-            resposta.render("cadastro_carro_resposta", {status: "Erro ao cadastrar"})
+            resposta.render("cadastro_carro_resposta", {status: "Erro ao cadastrar!"})
         }else{resposta.render("cadastro_carro_resposta", {status: "Carro cadastrado com sucesso!"})}
     })
 })
@@ -278,16 +279,88 @@ app.post("/vender_carro", function(requisicao, resposta){
     let ano = requisicao.body.ano
 
     let data = {db_marca: marca, db_modelo: modelo, db_ano: ano}
-    let newdata = { $set: {db_qtd_disponivel: += -1} }
+
+    carros_cadastrados.find(data).toArray(function(err,items){
+        if (items.length == 0){
+            resposta.render("cadastro_carro_resposta", {status: "Carro não encontrado!"})
+        }else if (err){
+            resposta.render("cadastro_carro_resposta", {status: "Erro ao vender carro!"})
+        }else{
+            if (items[0]['db_qtd_disponivel'] > 0){
+                nova_qtd = items[0]['db_qtd_disponivel'] - 1
+                let newdata = { $set: {db_qtd_disponivel: nova_qtd} } 
+                    carros_cadastrados.updateOne(data, newdata, function(err, result){
+                        console.log(result)
+                        if (result.modifiedCount == 0){
+                            resposta.render("cadastro_carro_resposta", {status: "Carro não encontrado!"})
+                        }else if (err){
+                            resposta.render("cadastro_carro_resposta", {status: "Erro ao vender carro!"})
+                        }else{
+                             resposta.render("cadastro_carro_resposta", {status: "Carro vendido!"})
+                        }
+                     }
+            )}else{
+                resposta.render("cadastro_carro_resposta", {status:"Não é possível vender um carro esgotado!"})
+            }
+            }
+        }
+    )
+})
+
+app.post("/deletar_carro", function(requisicao,resposta){
+    let marca = requisicao.body.marca
+    let modelo = requisicao.body.modelo
+    let ano = requisicao.body.ano
+
+    let data = {db_marca: marca, db_modelo: modelo, db_ano: ano}
+
+    carros_cadastrados.deleteOne(data, function(err, result){
+        console.log(result)
+        if (result.deletedCount == 0){
+            resposta.render("cadastro_carro_resposta", {status:"Carro não encontrado!"})
+        }else if (err){
+            resposta.render("cadastro_carro_resposta", {status: "Erro ao deletar carro!"})
+        }else{
+            resposta.render("cadastro_carro_resposta", {status: "Carro deletado com sucesso!"})
+        }
+    })
+})
+
+
+app.post("/atualizar_carro", function(requisicao, resposta){
+    let marca = requisicao.body.marca
+    let modelo = requisicao.body.modelo
+    let ano = requisicao.body.ano
+
+    let newmarca = requisicao.body.newmarca
+    let newmodelo = requisicao.body.newmodelo
+    let newano = requisicao.body.newano
+    let newqtd = parseInt(requisicao.body.newqtd)
+
+    let data = {db_marca: marca, db_modelo:modelo, db_ano: ano}
+    let newdata = {$set: {db_marca: newmarca}, $set: {db_modelo: newmodelo}, $set: {db_ano: newano}, $set: {db_qtd_disponivel: newqtd}}
     
     carros_cadastrados.updateOne(data, newdata, function(err, result){
         console.log(result)
         if (result.modifiedCount == 0){
-            resposta.render("cadastro_carro_resposta", {status: "Carro não encontrado"})
+            resposta.render("cadastro_carro_resposta", {status:"Carro não encontrado!"})
         }else if (err){
-            resposta.render("cadastro_carro_resposta", {status: "Erro ao vender carro"})
+            resposta.render("cadastro_carro_resposta", {status:"Erro ao atualizar carro!"})
         }else{
-            resposta.render("cadastro_carro_resposta", {status: "Carro vendido!"})
+            resposta.render("cadastro_carro_resposta", {status:"Carro atualizado com sucesso!"})
         }
     })
+})
+
+app.get("/carros_lista", function(requisicao,resposta){
+    carros_cadastrados.find().toArray(function(err, items){
+        if(err){
+            resposta.render("carroslista", {status:"Erro"})
+        }else{
+            resposta.render("carroslista", {data: items, status: "OK"})
+        }
+    })})
+
+app.get("/carros",function(requisicao,resposta){
+    resposta.redirect("/Laboratórios/Lab10/carromenu.html")
 })
