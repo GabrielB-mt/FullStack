@@ -230,8 +230,8 @@ app.post("/carro_cadastrar_usuario", function(requisicao,resposta){
     
     carros_usuarios.insertOne(data, function(err){
         if(err){
-            resposta.render("carros_conta_resposta", {status: "Erro ao cadastrar"})
-        }else{resposta.render("carros_conta_resposta", {status: "Cadastro feito com sucesso!"})}
+            resposta.render("carros_conta_resposta", {status: "Erro ao cadastrar", logado:false})
+        }else{resposta.render("carros_conta_resposta", {status: "Cadastro feito com sucesso!", logado:false})}
     })
 })
 

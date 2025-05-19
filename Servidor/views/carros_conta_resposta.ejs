@@ -7,9 +7,12 @@
     </head>
     <body>
         <h1><%= status %></h1>
-
         <% if(logado){
             %><div class="links"> <a href="/carros_lista">Listagem de Carros</a> <a href="/Laboratórios/Lab10/gerencia_carro.html">Gerenciar Carros</a> </div> <%
-        } %>
+        }else{ %>
+        <div class="links">
+            <a href="/carro_cadastra">Cadastrar</a>
+            <a href="/carro_loga">Login</a>
+        </div> <%}%>
     </body>
 </html>

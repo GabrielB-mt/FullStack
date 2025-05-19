@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class='lista'>
         <h1>Gerenciar Carros</h1>
+        <div class="acoes">
         <h3>Cadastrar Carro</h3>
         <form method='post' action="/cadastrar_carro">
             <p>Marca: <input type='text' name='marca'></p>
@@ -15,6 +17,8 @@
             <p>Quantidade Disponível: <input type='number' name='qtd'></p>
             <input type="submit" value="Cadastrar">
         </form>
+        </div>
+        <div class="acoes">
         <h3>Atualizar Carro</h3>
         <form method="post" action="/atualizar_carro">
             <div id="atualizar_old">
@@ -30,6 +34,8 @@
             </div>
             <input type="submit" value="Atualizar">
         </form>
+        </div>
+        <div class="acoes">
         <h3>Deletar Carro</h3>
         <form method="post" action="/deletar_carro">
             <p>Marca: <input type='text' name='marca'></p>
@@ -37,6 +43,8 @@
             <p>Ano: <input type='text' name='ano'></p>
             <input type="submit" value="Deletar">
         </form>
+        </div>
+        <div class="acoes">
         <h3>Vender Carro</h3>
         <form method="post" action="/vender_carro">
             <p>Marca: <input type='text' name='marca'></p>
@@ -44,5 +52,7 @@
             <p>Ano: <input type='text' name='ano'></p>
             <input type="submit" value="Vender">
         </form>
+        </div>
+        </div>
     </body>
 </html>

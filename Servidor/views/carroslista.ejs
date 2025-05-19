@@ -8,19 +8,29 @@
     <body>
         <% if (status == "Erro"){
             %><h1><%= status%></h1> <%
-        }else{
+        }else{ %>
+            <div class="lista"> <%
             for (var i = 0; i < data.length; i++){
                 qtd = -1
                 if (data[i]['db_qtd_disponivel'] == 0){
                     qtd = "Esgotado"
+                    id = "esgotado"
+                    
                 }else{
                     qtd = data[i]['db_qtd_disponivel']
+                    id = ""
                 } %>
                 <div class="carro">
+                <div>
                 <p><%= data[i]['db_marca'] %> - <%= data[i]['db_modelo'] %></p>
+                </div>
+                <div>
                 <p><%= data[i]['db_ano'] %></p>
-                <p>Quantidade Disponível: <%= qtd %></p>
-            <% }
+                </div>
+                <div id="quantidade">
+                <p>Quantidade Disponível:</p> <p id=<%=id %>> <%= qtd %></p>
+                </div>
+            </div><% } 
         } %>
     </body>
 </html>

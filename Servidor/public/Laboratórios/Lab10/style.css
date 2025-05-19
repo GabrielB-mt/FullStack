@@ -1,3 +1,123 @@
 body{
     background-color: #404352;
 }
+h1, h3{
+    text-align: center;
+    color:ghostwhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 10px;
+}
+.menuinicial a, .links a{
+    border-style: inset;
+    border-color: #2e303b;
+    background-color: #565a6e;
+    color: #dc6ae2;
+    margin: 0px 5px 0px 5px;
+    padding: 2px 2px 4px 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menuinicial, .links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+a:hover{
+    color:#ec00f8
+}
+a:visited{
+    color:#f02dfa
+}
+
+form{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+}
+p{
+    text-align: center;
+    color:ghostwhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+input[type=submit]{
+    border-style: inset;
+    border-color: #2e303b;
+    background-color: #565a6e;
+    border-width: 2px;
+    width: 200px;
+    text-align: center;
+    color:ghostwhite;
+    font-size: 15px;
+    margin-top: 7px;
+    margin-bottom: 3px;
+}
+
+input[type=text],input[type=password], input[type=number]{
+    border-style: inset;
+    border-color: #2e303b;
+    background-color: #565a6e;
+    border-width: 2px;
+    width: 200px;
+    color:ghostwhite;
+    font-size: 15px;
+    margin-top: 7px;
+}
+form p{
+    margin: 5px 0px 5px 0px;
+    width: 500px
+}
+
+.carro{
+    display: flex;
+    flex-direction: column;
+    background-color: ghostwhite;
+    border: #2e303b;
+    border-style: solid;
+    border-radius: 15px;
+    margin: 10px;
+    width: 500px;
+}
+.carro p{
+    color:black;
+    margin: 5px 0px 5px 0px
+}
+.lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#quantidade{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#quantidade p{
+    margin: 0px 5px 0px 5px
+}
+#esgotado {
+    color: red
+}
+
+#atualizar_old, #atualizar_new{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.acoes{
+    display: flex;
+    flex-direction: column;
+    border: #2e303b;
+    border-radius: 15px;
+    border-style: solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 550px;
+    justify-content: center;
+    align-items: center;
+}
